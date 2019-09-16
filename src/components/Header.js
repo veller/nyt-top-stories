@@ -1,6 +1,6 @@
 import React from "react";
 import moment from "moment";
-import { Container, Logo } from "./Header.styles";
+import { Container } from "./Header.styles";
 import logo from "../images/logo.svg";
 
 function Header() {
@@ -15,7 +15,7 @@ function Header() {
         <img src={logo} alt="" />
       </div>
       <div>
-        <a target="_blank" href="https://www.nytimes.com/section/todayspaper">
+        <a target="blank" href="https://www.nytimes.com/section/todayspaper">
           Today’s Paper
         </a>
       </div>

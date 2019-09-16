@@ -14,6 +14,28 @@ export const Container = styled.div`
   }
 
   img {
-    width: 350px;
+    width: 200px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 8px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  div:nth-child(1),
+  div:nth-child(3) {
+    display: none;
+  }
+
+  @media (min-width: 768px) {
+    div:nth-child(1),
+    div:nth-child(3) {
+      display: block;
+    }
+
+    img {
+      width: 350px;
+    }
   }
 `;

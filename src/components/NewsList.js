@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Container } from "./NewsList.styles";
 import Article from "./Article";
 
@@ -25,7 +25,7 @@ function NewsList({
   console.log("data from NewsList", data);
 
   return (
-    <Container>
+    <Container isAllItemsShown={isAllItemsShown}>
       {isError && <div>Something went wrong ...</div>}
       {isLoading ? (
         <div>Loading...</div>

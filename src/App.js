@@ -4,14 +4,15 @@ import Header from "./components/Header";
 import SectionNav from "./components/SectionNav";
 import NewsList from "./components/NewsList";
 
+const SHOW_ITEMS_INITIAL_STATE = 3;
+
 function App() {
   const API_KEY = "wdCf1FHAzoLfSiVXsi5EUJkxNp526oxU";
   const [query, setQuery] = useState("science");
   const [data, setData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [isError, setIsError] = useState(false);
-  const showItensInitialState = 3;
-  const [showItems, setShowItems] = useState(showItensInitialState);
+  const [showItems, setShowItems] = useState(SHOW_ITEMS_INITIAL_STATE);
   const [isAllItemsShown, setAllItemsShow] = useState(false);
   const URL = `https://api.nytimes.com/svc/topstories/v2/${query}.json?api-key=${API_KEY}`;
 
@@ -19,7 +20,7 @@ function App() {
     const fetchData = async () => {
       setIsError(false);
       setIsLoading(true);
-      setShowItems(showItensInitialState);
+      setShowItems(SHOW_ITEMS_INITIAL_STATE);
       setAllItemsShow(false);
 
       try {
@@ -59,9 +60,9 @@ function App() {
 
 export default App;
 
-// to dos
-// alinhar o logo no centro da tela. 33% para cada div da nav?
-// remover border-bottom do último Article
-// alinhar o texto "show more" dentro do Botão na NewsList
-// como usar reduce para exibir Articles na NewsList?
-// como tratar erro de undefined. exemplo: Cannot read property 'url' of undefined - World Two Major Saudi Oil...
+//to do
+//componente para buscar dados AppData
+//separar componentes em suas pastas - componente/style/test
+//rota para http://localhost:3000/nyttop
+//seu código deve possui um script inicializador, uma sugestão é o uso de Makefiles para rodar os comandos
+//README deve conter informações relevantes arquiteturais, explicações e comentários, e conter todas as informações necessárias para rodar o problema

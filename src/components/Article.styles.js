@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const ItemContainer = styled.div`
+export const ItemContainer = styled.article`
   display: flex;
   width: 80%;
   margin-bottom: 20px;
@@ -21,6 +21,8 @@ export const Item = styled.div`
 `;
 
 export const Title = styled.div`
+  display: flex;
+  flex-direction: column;
   color: #121212;
   font-size: 23px;
   letter-spacing: 0.2px;
@@ -34,6 +36,16 @@ export const Title = styled.div`
   span:hover {
     text-decoration: underline;
   }
+
+  span:last-child {
+    text-decoration: none;
+    cursor: default;
+    color: #999;
+    font-size: 11px;
+    font-weight: 500;
+    font-family: Helvetica, sans-serif;
+    margin-top: 10px;
+  }
 `;
 
 export const Abstract = styled.div`
@@ -43,17 +55,17 @@ export const Abstract = styled.div`
   color: #333333;
   margin: 25px 0;
 
+  flex-direction: column-reverse;
+
   span {
-    margin-right: 30px;
+    margin: 10px 30px 0 0;
   }
 
   img {
     margin-right: 30px;
   }
-`;
 
-export const ItemFooter = styled.div`
-  color: #999;
-  font-size: 11px;
-  font-family: Helvetica, sans-serif;
+  @media (min-width: 768px) {
+    flex-direction: row;
+  }
 `;

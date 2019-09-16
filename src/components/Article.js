@@ -5,12 +5,12 @@ import {
   PublishedDate,
   Item,
   Title,
-  Abstract,
-  ItemFooter
+  Abstract
 } from "./Article.styles";
 
 function Article({ item }) {
   const [isAbstractShown, setAbstractShow] = useState(false);
+  const hasMedia = !!item.multimedia.length;
 
   return (
     <ItemContainer>
@@ -22,18 +22,21 @@ function Article({ item }) {
           <span onClick={() => setAbstractShow(!isAbstractShown)}>
             {item.title}
           </span>
+          <span>{item.byline}</span>
         </Title>
         {isAbstractShown && (
           <Abstract>
             <span>{item.abstract}</span>
-            <a target="blank" href={item.url}>
-              <img src={item.multimedia[2].url} alt="" />
-            </a>
+            {hasMedia && (
+              <a target="blank" href={item.url}>
+                <img
+                  src={item.multimedia[2].url}
+                  alt={item.multimedia[2].caption}
+                />
+              </a>
+            )}
           </Abstract>
         )}
-        <ItemFooter>
-          <span>{item.byline}</span>
-        </ItemFooter>
       </Item>
     </ItemContainer>
   );
